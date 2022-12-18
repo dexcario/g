@@ -1,0 +1,1 @@
+local g = require(game.ReplicatedStorage.Common.g)
