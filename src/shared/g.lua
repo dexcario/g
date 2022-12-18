@@ -4,6 +4,16 @@ local g = {
 	Scope = if game:GetService("RunService"):IsServer() then "Server" else "Client"
 }
 
+local m = {}
+
+function mt.__index(key)
+	if g.Services[key] then
+		return g.Services[key]
+	end
+end
+
+setmetatable(g, mt)
+
 function g:AddService(service)
 	
 	g.Services[service.Name] = service
